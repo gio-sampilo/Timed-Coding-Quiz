@@ -14,21 +14,13 @@ var userSelect = "";
 var gameQuestions = [
 
     {
-        Q: "Who?",
+        q: "Who?",
         ans1: 1,
         correctAnswer: "answer"
     },
 
     {
-        Q: "When?",
-        ans1: 1,
-        correctAnswer: "answer"
-
-    },
-
-
-    {
-        Q: "Where?",
+        q: "When?",
         ans1: 1,
         correctAnswer: "answer"
 
@@ -36,7 +28,7 @@ var gameQuestions = [
 
 
     {
-        Q: "What?",
+        q: "Where?",
         ans1: 1,
         correctAnswer: "answer"
 
@@ -44,7 +36,15 @@ var gameQuestions = [
 
 
     {
-        Q: "Why?",
+        q: "What?",
+        ans1: 1,
+        correctAnswer: "answer"
+
+    },
+
+
+    {
+        q: "Why?",
         ans1: 1,
         correctAnswer: "answer"
     }
@@ -74,14 +74,20 @@ function startGame() {
 }
 
 function renderQuestion() {
-    // userSelect = gameQuestions [Math.floor(Math.random() * gameQuestions.length)];
+    // userSelect = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
 
     for (var i = 0; i < gameQuestions.length; i++);
-    var question = gameQuestions[i];
-    // chosenQuestion.textContent = gameQuestions [i].Q ;
-    var newQuestion = document.createElement("h2")
-    chosenQuestion.setAttribute("class", "question")
-    chosenQuestion.textContent = question
+
+    var game = gameQuestions[i]
+    var li = document.createElement("li");
+    li.textContent = game
+
+    // var question = gameQuestions[i].q;
+    // chosenQuestion.textContent = gameQuestions[i]; (main one)
+
+    // var newQuestion = document.createElement("h2")
+    // newQuestion.setAttribute("class", "question")
+    // chosenQuestion.textContent = question;
 
 
 
