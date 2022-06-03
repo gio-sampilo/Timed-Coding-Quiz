@@ -1,70 +1,56 @@
+//variables
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var chosenQuestion = document.querySelector(".container");
 
-var scoreCounter;
-var correctAns;
-var incorrectAns;
 var timer;
 var timerCount;
-var isWin = false;
-var question;
-
-var userSelect = "";
-var gameQuestions = [
+var questionCounter ;
+var questions =[
 
     {
-        q: "Who?",
-        ans1: 1,
-        correctAnswer: "answer"
+        question: "DOM stands for:",
+        a:"Don't Owe Money", 
+        b:"Document Object Model", 
+        c:"Digital Owner Manual",
+        correct: "Document Object Model",
     },
-
     {
-        q: "When?",
-        ans1: 1,
-        correctAnswer: "answer"
-
+        question: "DOM stands for:",
+        a:"Don't Owe Money", 
+        b:"Document Object Model", 
+        c:"Digital Owner Manual",
+        correct: "Document Object Model",
     },
-
-
     {
-        q: "Where?",
-        ans1: 1,
-        correctAnswer: "answer"
-
+        question: "DOM stands for:",
+        a:"Don't Owe Money", 
+        b:"Document Object Model", 
+        c:"Digital Owner Manual",
+        correct: "Document Object Model",
     },
-
-
     {
-        q: "What?",
-        ans1: 1,
-        correctAnswer: "answer"
-
+        question: "DOM stands for:",
+        a:"Don't Owe Money", 
+        b:"Document Object Model", 
+        c:"Digital Owner Manual",
+        correct: "Document Object Model",
     },
-
-
     {
-        q: "Why?",
-        ans1: 1,
-        correctAnswer: "answer"
+        question: "DOM stands for:",
+        a:"Don't Owe Money", 
+        b:"Document Object Model", 
+        c:"Digital Owner Manual",
+        correct: "Document Object Model",
     }
+]
 
-];
+function renderQuestion() {
+    for (let i = 0; i < questions.length; i++)
+    console.log(questions.question);
+};
 
-console.log(gameQuestions);
-
-// var gameAnswers = ["1", "2", "3", "4", "5"];
-
-// var questionOne = [
-// { 
-// q: "What does Nan stand for?",
-// pa1: "no and no",
-// pa2: "Not a Number",
-// pa3: "Not a Nose",
-// correct:"Not a Number"
-// }    
-// ]
-
+//Start game
 function startGame() {
     isWin = false;
     timerCount = 60;
@@ -73,30 +59,7 @@ function startGame() {
     renderQuestion()
 }
 
-function renderQuestion() {
-    // userSelect = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
-
-    for (var i = 0; i < gameQuestions.length; i++);
-
-    var game = gameQuestions[i]
-    var li = document.createElement("li");
-    li.textContent = game
-
-    // var question = gameQuestions[i].q;
-    // chosenQuestion.textContent = gameQuestions[i]; (main one)
-
-    // var newQuestion = document.createElement("h2")
-    // newQuestion.setAttribute("class", "question")
-    // chosenQuestion.textContent = question;
-
-
-
-}
-
-console.log(renderQuestion);
-
-startButton.addEventListener("click", startGame);
-
+//Timer for game
 function startTimer() {
     timer = setInterval(function () {
         timerCount--;
@@ -112,7 +75,11 @@ function startTimer() {
     }, 1000);
 }
 
-//   function printQuestionAnswers () {
+//start button for game
 
+startButton.addEventListener("click", startGame);
 
-//   }
+function questionCount(){
+let count = 0
+ count = count + 1
+}
