@@ -3,9 +3,12 @@ var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var chosenQuestion = document.querySelector(".container");
 
+var currentQuestion= {};
+var score;
 var timer;
 var timerCount;
 var questionCounter ;
+var questionChosen = []
 var questions =[
 
     {
@@ -52,9 +55,11 @@ function renderQuestion() {
 
 //Start game
 function startGame() {
-    isWin = false;
+    noTimeLeft = false;
     timerCount = 60;
     startButton.disabled = false;
+    questionChosen = [...questions];
+    startButton.style.display = "none";
     startTimer()
     renderQuestion()
 }
@@ -82,4 +87,13 @@ startButton.addEventListener("click", startGame);
 function questionCount(){
 let count = 0
  count = count + 1
+}
+
+//Render question to page
+function renderQuestion() {
+var questionIndex = Math.floor(Math.random() * questionChosen.length);
+currentQuestion = questionChosen[questionIndex];
+chosenQuestion.textContent = currentQuestion.question;
+
+
 }
